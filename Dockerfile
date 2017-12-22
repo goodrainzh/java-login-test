@@ -130,6 +130,7 @@ RUN chmod +x /docker-entrypoint.sh
 
 # add redis session lib
 COPY lib /usr/local/tomcat/lib
+COPY index.jsp /usr/local/tomcat/webapps/ROOT/index.jsp
 
 # add pinpoint apm agent
 ENV PINPOINT_AGETN_VERSION="1.7.0-RC2"
