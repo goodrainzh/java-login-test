@@ -1,5 +1,5 @@
 # set default_java_mem_opts
-case ${MEMORY_SIZE:-small} in
+case $MEMORY_SIZE in
     "micro")
        export JAVA_OPTS="-Xms90m -Xmx90m -Xss512k  -XX:MaxDirectMemorySize=12M"
        echo "Optimizing java process for 128M Memory...." >&2
@@ -33,7 +33,7 @@ case ${MEMORY_SIZE:-small} in
        echo "Optimizing java process for biger Memory...." >&2
        ;;
     *)
-       export JAVA_OPTS="-Xms128m -Xmx128m -Xss512k -XX:MaxDirectMemorySize=24M"
-       echo "Optimizing java process for 256M Memory...." >&2
+       export JAVA_OPTS="-Xms512m -Xmx512m -Xss512k -XX:MaxDirectMemorySize=24M"
+       echo "MEMORY_SIZE environment variable is not set, use the default memory settings" >&2
        ;;
 esac

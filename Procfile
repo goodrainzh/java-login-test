@@ -1,1 +1,0 @@
-web: java -jar target/dependency/webapp-runner.jar --session-store memcache target/demo.war
