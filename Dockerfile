@@ -1,7 +1,5 @@
 FROM goodrainapps/tomcat:8.5.20-jre8-alpine
 
-RUN rm -r /usr/local/tomcat/webapps/ROOT
-
-COPY demo.war /usr/local/tomcat/webapps/ROOT.war
+COPY index.jsp /usr/local/tomcat/webapps/ROOT/index.jsp
 
 EXPOSE 8080
