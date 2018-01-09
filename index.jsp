@@ -1,22 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Session持久化测试页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>login page</title>
 </head>
 <body>
-<h1><font color="red">容器HOSTNAME: <%=System.getenv("HOSTNAME") %></font> </h1>
-<table>
-    <tr>
+    <form action="servlet/LoginServlet" method="post">
+            <table border="0" align="center">
+            	<tr align="center">
+            	<td colspan="2">
+            	<h2>登录</h2>
+            	</td>
+            	</tr>
+                <tr>
+                <td>用户名：</td>
+                <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                <td>密码：<br></td>
+                <td><input type="password" name="password"></td>
+                </tr> 
+                <tr>
+                <td colspan="2" align="center"><input type="submit" name="submit" value="登录"></td>
+                </tr>
+            </table>
+    </form>
+    
 
-        <td>session ID</td>
-        <% session.setAttribute("abc","abc"); %>
-        <td><%= session.getId() %></td>
-    </tr>
-    <tr>
-
-        <td>Created on</td>
-        <td><%= session.getCreationTime() %></td>
-    </tr>
-</table>
 </body>
 </html>
